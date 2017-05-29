@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Mei 2017 pada 08.28
--- Versi Server: 10.1.21-MariaDB
+-- Generation Time: May 28, 2017 at 04:00 PM
+-- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `homerunstore_db`
+-- Database: `fp_pweb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `addresses`
+-- Table structure for table `addresses`
 --
 
 CREATE TABLE `addresses` (
@@ -40,7 +40,7 @@ CREATE TABLE `addresses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `addresses`
+-- Dumping data for table `addresses`
 --
 
 INSERT INTO `addresses` (`id`, `addressline`, `city`, `state`, `zip`, `country`, `phone`, `created_at`, `updated_at`, `user_id`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `addresses` (`id`, `addressline`, `city`, `state`, `zip`, `country`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -77,7 +77,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -105,10 +105,17 @@ CREATE TABLE `messages` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_id`, `sender_name`, `sender_email`, `sender_phone`, `message`, `read`, `created_at`, `updated_at`) VALUES
+(1, '32423', '4324@4343.rer', 489238492384, 'jifgji', 0, '2017-05-28 06:02:36', '2017-05-28 06:02:36');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -118,7 +125,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -138,7 +145,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -151,7 +158,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `total`, `delivered`, `created_at`, `updated_at`) VALUES
@@ -175,7 +182,7 @@ INSERT INTO `orders` (`id`, `user_id`, `total`, `delivered`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `order_product`
+-- Table structure for table `order_product`
 --
 
 CREATE TABLE `order_product` (
@@ -189,7 +196,7 @@ CREATE TABLE `order_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `order_product`
+-- Dumping data for table `order_product`
 --
 
 INSERT INTO `order_product` (`id`, `product_id`, `order_id`, `qty`, `total`, `created_at`, `updated_at`) VALUES
@@ -212,7 +219,7 @@ INSERT INTO `order_product` (`id`, `product_id`, `order_id`, `qty`, `total`, `cr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -224,7 +231,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -240,7 +247,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `size`, `price`, `image`, `category_id`, `created_at`, `updated_at`) VALUES
@@ -256,7 +263,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `size`, `price`, `image`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -271,12 +278,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`) VALUES
-(1, 'admin', 'admin@admin.com', '$2y$10$7vb5Hpz8LCO7/DJJVz/FkuyJykBCRgm.PUphWT.6x1FLCwKezR8bi', 'M98f00SvCoWBTnVfVuD8ebAlZZNyk3dTGO2Jl1mjX59tvjfy5GAoAjO6jpwc', '2017-05-20 15:53:30', '2017-05-20 15:53:30', 1),
-(2, 'test', 'test@test.com', '$2y$10$L42.fEXnRdbyRFx1r8iGfOeCjwxqGtAARDBjBLQtpFCcx6GeeC2lm', '8gGlTfhR2ufhblKFMkLaqjZrLl9WbMzHDJtgdz5zztWBYHJGwXwesrVgBmoa', '2017-05-20 22:09:04', '2017-05-20 22:09:04', NULL);
+(1, 'admin', 'admin@admin.com', '$2y$10$7vb5Hpz8LCO7/DJJVz/FkuyJykBCRgm.PUphWT.6x1FLCwKezR8bi', 'uzDj4JmCaS9YZNbS3O6UHgWSETfNk7tDEJHDOxw7GiyUCM1gJzNMMZxV3hZD', '2017-05-20 15:53:30', '2017-05-20 15:53:30', 1),
+(2, 'test', 'test@test.com', '$2y$10$L42.fEXnRdbyRFx1r8iGfOeCjwxqGtAARDBjBLQtpFCcx6GeeC2lm', '8gGlTfhR2ufhblKFMkLaqjZrLl9WbMzHDJtgdz5zztWBYHJGwXwesrVgBmoa', '2017-05-20 22:09:04', '2017-05-20 22:09:04', NULL),
+(3, 'Alfindio', 'diokamil@gmail.com', '$2y$10$Fj2VUxgKkgydRyWvju7DYeF2oMabH4rqH8cnOs391DITDIdVNBL.O', 'xyBMihmrrdDkqgBUDZmpb1qiO3aTeBoNcFmuuRxnuVuvXbMPOL60Z99NiGit', '2017-05-28 05:25:33', '2017-05-28 05:25:33', NULL);
 
 --
 -- Indexes for dumped tables
@@ -355,7 +363,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -380,7 +388,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
