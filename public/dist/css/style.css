@@ -1,0 +1,85 @@
+h1, h2, a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: Helvetica, Arial, sans-serif; 
+}
+
+.container2 {
+  max-width: 0 auto;
+  margin: 0 auto;
+}
+
+/* Supporting */
+.supporting {
+  background-color: #1c1c1c;
+  padding: 50px 0 80px;
+  text-align: center;
+}
+
+.supporting .col {
+  float: left;
+  padding: 10px;
+  width: 22%;
+}
+
+.supporting h2 {
+  color: #ffa800;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+.supporting p {
+  color: #efefef;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.supporting .btn {
+  background-color: #eee;
+  color: #1c1c1c;
+  font-size: 18px;
+  padding: 8px 30px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Feature */
+.feature {
+  background: #3d3d3d url(../img/bg2.jpg) center center no-repeat;
+  background-size: cover;
+  height: 600px;
+  text-align: center;
+}
+
+.feature .container {
+  position: relative;
+  top: 200px;
+  width: 50%;
+}
+
+.feature h2 {
+  color: #fff;
+  font-size: 40px;
+  margin:0;
+  padding:50px 0 0;
+}
+
+.feature p {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+
+.feature .btn {
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 30px;
+  text-decoration: none;
+  display: inline-block;
+}
